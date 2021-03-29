@@ -1,0 +1,21 @@
+int index(int input[], int size, int x, int output[], int currIndex, int &i)
+{
+    if(size == 0) return 0;    
+    
+    if(input[0] == x)
+    {
+     output[i] = currIndex;
+        i++;
+    }
+    return index(input+1,size-1,x,output,currIndex+1,i);
+      
+}
+int allIndexes(int input[], int size, int x, int output[]) 
+{
+    int i = 0;
+    int currIndex = 0;
+ 
+   index(input,size,x,output,currIndex,i);
+    return i;
+    
+}
