@@ -1,0 +1,19 @@
+double geometricSum(int k) 
+{
+    if(k == 0) return 1;
+    double i = 0;
+    double power;
+    if( k > 0)
+    {
+         power = 1;
+        while( i < k)
+        {
+            power *= 2;
+             i++;
+        }
+    }
+    double smallOutput = geometricSum(k-1);
+    return smallOutput + 1/power;
+}
+
+
