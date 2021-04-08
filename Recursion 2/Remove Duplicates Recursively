@@ -1,0 +1,17 @@
+void remove(char input[], int i){
+    int j = i;
+    for(j; input[j] != '\0'; j++){
+        input[j] = input[j+1];
+    }
+}
+ void helper(char input[], int i){
+    if(input[0] == '\0') return;
+    if(input[i] == input[i + 1]){
+        remove(input, i);
+        helper(input, i);
+    }
+           helper(input + 1, i);
+ }
+ void removeConsecutiveDuplicates(char input[]){
+    helper(input, 0);
+ }
